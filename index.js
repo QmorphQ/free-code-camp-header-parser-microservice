@@ -25,6 +25,7 @@ app.get('/api/hello', function (req, res) {
 });
 
 app.get("/api/whoami", (req, res) => {
+  app.enable('trust proxy');
   var ip =  req.ip ;
   res.json({ipaddress: ip})
 })
