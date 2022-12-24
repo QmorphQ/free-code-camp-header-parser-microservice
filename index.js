@@ -28,6 +28,7 @@ app.get("/api/whoami", (req, res) => {
   let resObj = {};
   app.enable("trust proxy");
   resObj["ipaddress"] = req.ip;
+  resObj["language"] = req.get('Accept-Language');
   res.json(resObj);
 });
 
